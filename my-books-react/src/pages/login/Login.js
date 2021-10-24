@@ -1,8 +1,8 @@
 import React from "react";
 import { useFormik } from 'formik';
+import LoginService from "../../services/LoginService";
 
 function Login() {
-
     const formik = useFormik({
         initialValues: {
             username: '',
@@ -10,6 +10,7 @@ function Login() {
         },
         onSubmit: values => {
             console.log(values);
+            LoginService.doLogin(values.username, values.password);
         }
     });
 
