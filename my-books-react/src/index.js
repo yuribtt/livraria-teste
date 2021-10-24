@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { MyProvider } from './context/context';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import MyBooksRoutes from './routers/MyBooksRoutes';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MyBooksRoutes />
+    <MyProvider>
+      <MyBooksRoutes />
+    </MyProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
